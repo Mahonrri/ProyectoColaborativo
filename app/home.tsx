@@ -2,13 +2,11 @@ import React, { useEffect, useState } from 'react';
 import {
     FlatList,
     Modal,
-    StyleSheet,
-    Text,
-    TextInput,
-    TouchableOpacity,
-    View
+
 } from 'react-native';
 
+
+//Falta correccion de errores en la pestaña HOME
 interface Registro {
   id: number;
   sensor: string;
