@@ -29,20 +29,25 @@ export default function Login() {
       <TextInput
         style={styles.input}
         placeholder="Usuario"
+        placeholderTextColor="#aaa"
         onChangeText={setUsername}
         value={username}
       />
       <TextInput
         style={styles.input}
         placeholder="Contraseña"
+        placeholderTextColor="#aaa"
         secureTextEntry
         onChangeText={setPassword}
         value={password}
       />
-      <Button title="Entrar" onPress={handleLogin} />
+
+      <TouchableOpacity style={styles.loginButton} onPress={handleLogin}>
+        <Text style={styles.loginButtonText}>Entrar</Text>
+      </TouchableOpacity>
 
       <TouchableOpacity onPress={goToRegister}>
-        <Text style={styles.link}>¿No tienes cuenta? Regístrate aquí</Text>
+        <Text style={styles.link}>¿No tienes cuenta? <Text style={styles.linkBold}>Regístrate aquí</Text></Text>
       </TouchableOpacity>
     </View>
   );
@@ -52,24 +57,45 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
-    paddingHorizontal: 20,
-    backgroundColor: 'white',
+    paddingHorizontal: 30,
+    backgroundColor: '#f5f5f5',
   },
   title: {
-    fontSize: 28,
-    marginBottom: 20,
+    fontSize: 32,
+    fontWeight: 'bold',
+    marginBottom: 30,
     textAlign: 'center',
+    color: '#333',
   },
   input: {
     borderWidth: 1,
-    borderColor: '#999',
-    borderRadius: 6,
-    padding: 12,
-    marginBottom: 12,
+    borderColor: '#ccc',
+    borderRadius: 12,
+    padding: 14,
+    marginBottom: 16,
+    backgroundColor: '#fff',
+    fontSize: 16,
+  },
+  loginButton: {
+    backgroundColor: '#007AFF',
+    paddingVertical: 14,
+    borderRadius: 12,
+    alignItems: 'center',
+    marginTop: 10,
+  },
+  loginButtonText: {
+    color: '#fff',
+    fontSize: 16,
+    fontWeight: '600',
   },
   link: {
-    marginTop: 20,
-    color: '#007AFF',
+    marginTop: 24,
+    color: '#555',
     textAlign: 'center',
+    fontSize: 14,
+  },
+  linkBold: {
+    color: '#007AFF',
+    fontWeight: '600',
   },
 });
